@@ -32,6 +32,17 @@ do
 	git checkout -b vfx/$new_branch && git merge vfx-import/$new_branch -m "creating vfx/${new_branch} by merging vfx/main with vfx-import/${new_branch}" || git reset --hard
 done
 
+#not yet tested
+
+for new_branch in "${new_branches[@]}"
+do
+	git checkout vfx/$new_branch || echo "branch vfx/$new_branch could not be created it doesn't merge automatically please use git merge vfx-import/$new_branch from vfx/main and fix the conflicts"
+done
 
 git remote add me git@gitlab.internal.unity3d.com:tristan/vfx-editor.git
-git push me --mirror
+
+$check = "${0//merge/check}"
+
+echo $check;
+
+eval $check
