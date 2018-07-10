@@ -16,6 +16,3 @@ for new_branch in "${new_branches[@]}"
 do
 	git checkout vfx/$new_branch >/dev/null 2>/dev/null || echo "branch vfx/$new_branch could not be created it doesn't merge automatically please use git merge vfx-import/$new_branch from vfx/main and fix the conflicts"
 done
-
-
-git checkout vfx/main
