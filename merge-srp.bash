@@ -23,8 +23,8 @@ done
 git checkout master
 git checkout -b vfx/main && git merge vfx-import/main --allow-unrelated-histories -m "creating vfx/main by merging master with vfx-import/main" || true
 
-delete=("main")
-new_branches=( "${new_branches[@]/$delete}" )
+#delete=("main")
+#new_branches=( "${new_branches[@]/$delete}" )
 
 for new_branch in "${new_branches[@]}"
 do
@@ -41,7 +41,7 @@ done
 
 git remote add me git@gitlab.internal.unity3d.com:tristan/vfx-editor.git
 
-$check = "${0//merge/check}"
+$check="${0//merge/check}"
 
 echo $check;
 

@@ -32,8 +32,8 @@ if [ -e com.unity.visualeffectgraph/VisualEffectGraph/Editor\ Default\ Resources
 #if [ -d com.unity.visualeffectgraph/CustomSpawners ]; then mv -v com.unity.visualeffectgraph/CustomSpawners com.unity.visualeffectgraph/VisualEffectGraph/CustomSpawners; fi
 #if [ -e com.unity.visualeffectgraph/CustomSpawners.meta ]; then mv -v com.unity.visualeffectgraph/CustomSpawners.meta com.unity.visualeffectgraph/VisualEffectGraph/CustomSpawners.meta; fi
 
-#if [ -d com.unity.visualeffectgraph/Utilities/Editor ]; then mv -v com.unity.visualeffectgraph/Utilities/Editor com.unity.visualeffectgraph/Editor/Utilities; fi
-#if [ -e com.unity.visualeffectgraph/Utilities/Editor.meta ]; then mv -v com.unity.visualeffectgraph/Utilities/Editor.meta com.unity.visualeffectgraph/Editor/Utilities.meta; fi
+if [ -d com.unity.visualeffectgraph/VisualEffectGraph/Utilities/Editor ]; then mv -v com.unity.visualeffectgraph/VisualEffectGraph/Utilities/Editor com.unity.visualeffectgraph/VisualEffectGraph/Editor/Utilities; fi
+if [ -e com.unity.visualeffectgraph/VisualEffectGraph/Utilities/Editor.meta ]; then mv -v com.unity.visualeffectgraph/VisualEffectGraph/Utilities/Editor.meta com.unity.visualeffectgraph/VisualEffectGraph/Editor/Utilities.meta; fi
 
 #if [ -d com.unity.visualeffectgraph/Utilities/EventBinding ]; then mv -v com.unity.visualeffectgraph/Utilities/EventBinding com.unity.visualeffectgraph/VisualEffectGraph/Utilities/EventBinding; fi
 #if [ -e com.unity.visualeffectgraph/Utilities/EventBinding.meta ]; then mv -v com.unity.visualeffectgraph/Utilities/EventBinding.meta com.unity.visualeffectgraph/VisualEffectGraph/Utilities/EventBinding.meta; fi

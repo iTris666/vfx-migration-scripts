@@ -63,10 +63,13 @@ echo '{
 
 
 
-echo '{
+echo 'using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("com.unity.visualeffectgraph.EditorTests")]
 [assembly: InternalsVisibleTo("com.unity.visualeffectgraph.EditorTests-testable")]
+
+namespace UnityEditor.VFX
+{
 
 public static class VisualEffectGraphPackageInfo
 {
@@ -88,4 +91,4 @@ public static class VisualEffectGraphPackageInfo
 	}
 }
 
-}' > com.unty.visualeffectgraph/VisualEffectGraph/PackageInfo.cs
+}' > com.unity.visualeffectgraph/VisualEffectGraph/Editor/PackageInfo.cs
