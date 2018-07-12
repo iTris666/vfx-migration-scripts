@@ -15,7 +15,7 @@ let branchcount=${#branches[@]}-1
 echo "$branchcount branches to process"
 
 #vfxrepo="git@gitlab.internal.unity3d.com:steffeng/VFX-Editor-Proto.git"
-vfxrepo="git@gitlab.internal.unity3d.com:steffeng/VFX-Editor-Proto.git"
+vfxrepo="git@10.33.33.67:gitlab-admin/vfx-original2.git"
 interrepo="vfx-samples-inter"
 finalrepo="vfx-samples-clean"
 
@@ -37,6 +37,16 @@ done
 #checkout the first branch and do some cleaning in all commits
 git checkout "vfx-import/${new_branches[0]}"
 git filter-branch --force --subdirectory-filter Assets/VFXSamples/ --prune-empty --tag-name-filter cat -- --all
+
+
+branch_include=""
+for i in $(seq 0 $branchcount)
+do
+    new_branch=${new_branches[$i]}
+    branch_include+=" --include-ref=refs/heads/vfx-import/${new_branch}"
+done
+echo $branch_include
+git lfs migrate import --include="*.mp3,*.fbx,*.png,*.pcache,*.tga" $branch_include
 
 #optimize repo
 git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
